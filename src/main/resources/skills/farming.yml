@@ -1,0 +1,21 @@
+name: Farming
+level-formula: '%level% * 325'
+max-level: 100
+
+# tasks :)
+tasks:
+  BREAK:
+    required-tools: [ ]
+    recursive: true
+    actions:
+      "WHEAT":
+        experience: 1.3
+        money: 0.45
+        conditions:
+          grown-crop: "true"
+  PLACE:
+    required-tools: [ ]
+    actions:
+      WHEAT_SEEDS:
+        experience: 0.5
+    
