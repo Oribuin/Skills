@@ -36,7 +36,7 @@ public class EnchantCondition extends EntityCondition {
      */
     @Override
     public boolean test(@NotNull Player executor, @NonNull Entity target) {
-        executor.getEquipment();
+        return false; // todo: figure out which one should be checked ?
     }
 
     /**
