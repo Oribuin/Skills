@@ -9,7 +9,7 @@ public interface Placeholder {
      *
      * @return The compiled string placeholders
      */
-    default Placeholders placeholders() {
+    default Placeholders getPlaceholders() {
         return Placeholders.empty();
     }
 
@@ -20,9 +20,9 @@ public interface Placeholder {
      *
      * @return A compiled {@link Placeholders}
      */
-    default Placeholders placeholders(Placeholders... toAppend) {
+    default Placeholders getPlaceholders(Placeholders... toAppend) {
         Placeholders.Builder builder = Placeholders.builder();
-        builder.addAll(this.placeholders());
+        builder.addAll(this.getPlaceholders());
 
         // Append any new Placeholders into the new builder
         if (toAppend != null) {

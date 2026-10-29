@@ -1,16 +1,19 @@
-package dev.oribuin.skills.skill.task.condition.block;
+package dev.oribuin.skills.skill.task.condition.entity;
 
 import dev.oribuin.skills.config.ConfigBoolean;
 import dev.oribuin.skills.skill.task.condition.types.BlockCondition;
+import dev.oribuin.skills.skill.task.condition.types.EntityCondition;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Skeleton;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jspecify.annotations.NonNull;
 
-public class SilkTouchCondition extends BlockCondition {
+public class EnchantCondition extends EntityCondition {
 
     private final ConfigBoolean silkTouch;
 
@@ -19,9 +22,21 @@ public class SilkTouchCondition extends BlockCondition {
      *
      * @param section The section to load
      */
-    public SilkTouchCondition(@NotNull ConfigurationSection section) {
+    public EnchantCondition(@NotNull ConfigurationSection section) {
         super(section);
         this.silkTouch = ConfigBoolean.check(section, "silk-touch");
+    }
+
+    /**
+     * Check to see if the condition can apply to the value provided
+     *
+     * @param executor The person running the task
+     * @param target   The type to check for
+     * @return true if the condition passes
+     */
+    @Override
+    public boolean test(@NotNull Player executor, @NonNull Entity target) {
+        executor.getEquipment();
     }
 
     /**

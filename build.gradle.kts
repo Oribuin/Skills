@@ -11,8 +11,8 @@ group = "dev.oribuin"
 version = "1.0"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
 
     disableAutoTargetJvm()
     toolchain {
@@ -36,9 +36,9 @@ repositories {
 
 dependencies {
     // Commands, Configs & Database
-    api("org.incendo:cloud-core:2.0.0")
-    api("org.incendo:cloud-annotations:2.0.0")
-    api("org.incendo:cloud-paper:2.0.0")
+    api("org.incendo:cloud-core:2.1.0")
+    api("org.incendo:cloud-annotations:2.1.0")
+    api("org.incendo:cloud-paper:2.0.1")
     api("org.spongepowered:configurate-yaml:4.2.0")
     api("com.zaxxer:HikariCP:4.0.3")
     api("dev.triumphteam:triumph-gui:3.1.13") {  // https://triumphteam.dev/docs/triumph-gui/
@@ -51,7 +51,7 @@ dependencies {
     api("com.jeff-media:MorePersistentDataTypes:2.4.0")
 
     // Spigot
-    compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.+")
     compileOnly("org.jetbrains:annotations:23.0.0")
 
     // External Plugins

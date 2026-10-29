@@ -36,7 +36,7 @@ public record ConfigBoolean(boolean applicable, boolean inverted) {
      * Check against an option for the plugin and whether it should be inverted
      *
      * @param existing The existing config
-     * @return The applicable of the check
+     * @return Whether the check is applicable
      */
     public boolean check(boolean existing) {
         if (!this.applicable) return false;

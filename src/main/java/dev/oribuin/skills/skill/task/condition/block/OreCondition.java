@@ -1,7 +1,7 @@
 package dev.oribuin.skills.skill.task.condition.block;
 
-import com.destroystokyo.paper.MaterialTags;
 import dev.oribuin.skills.skill.task.condition.types.BlockCondition;
+import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -28,7 +28,7 @@ public class OreCondition extends BlockCondition {
     @Override
     public boolean test(@NotNull Player executor, @NotNull Block target) {
         boolean inverted = this.section.getBoolean("is-ore");
-        boolean isOre = MaterialTags.ORES.isTagged(target);
+        boolean isOre = Tag.ORES.isTagged(target.getType());
         return inverted != isOre;
     }
 
